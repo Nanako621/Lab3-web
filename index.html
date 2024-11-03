@@ -7,6 +7,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    // 讓標題淡入顯示
+    $("header h1").hide().fadeIn(2000);
+
+    // 點擊圖片時變大顯示框線
+    $(".footer-section img").on("click", function() {
+        $(this).css({
+            "transform": "scale(1.1)",
+            "border": "3px solid #333"
+        });
+    }).on("mouseleave", function() {
+        $(this).css({
+            "transform": "scale(1)",
+            "border": "none"
+        });
+    });
+
+    // 點擊鏈接後變色
+    $(".footer-section a").on("click", function() {
+        $(this).css("color", "#00ff00");
+    });
+
+    // 滑鼠移到段落時變色
+    $(".footer-section p").on("mouseenter", function() {
+        $(this).css({
+            "background-color": "#ffeb3b",
+            "color": "#333"
+        });
+    }).on("mouseleave", function() {
+        $(this).css({
+            "background-color": "transparent",
+            "color": "#000"
+        });
+    });
+
+    // 點擊頁尾文字平滑滾動到頂部
+    $(".footer-bottom p").on("click", function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+
+    // 頁面載入時圖片逐一淡入顯示
+    $(".footer-section img").each(function(index) {
+        $(this).delay(500 * index).fadeIn(1000);
+    });
+});
+
+    $(document).ready(function(){
+        // 讓標題淡入顯示
+        $("header h1").hide().fadeIn(2000);
+
+        // 點擊圖片時變大顯示框線
+        $(".footer-section img").on("click", function() {
+            $(this).css({
+                "transform": "scale(1.1)",
+                "border": "3px solid #333"
+            });
+        }).on("mouseleave", function() {
+            $(this).css({
+                "transform": "scale(1)",
+                "border": "none"
+            });
+        });
+
+        // 點擊鏈接後變色
+        $(".footer-section a").on("click", function() {
+            $(this).css("color", "#00ff00");
+        });
+    });
+</script>
     <header>
         <h1>Netflix《黑白大廚：料理階級大戰》</h1>
     </header> 
@@ -15,6 +86,7 @@
             <div class="footer-section">
                 <section>
                     <p>大家有沒有看過最近在Netflix上的節目《黑白大廚呢》？今天來跟大家介紹一下這個節目和好看的點在哪裡吧！ </p>
+                    <p>觀看連結</p>
                     <p>⬇️⬇️⬇️觀看連結⬇️⬇️⬇️</p>
                     <a target="_blank" href="https://www.netflix.com/browse">Netflix《黑白大廚：料理階級大戰》</a>
                     <img src="封面.jpeg" alt="黑白大廚封面">
